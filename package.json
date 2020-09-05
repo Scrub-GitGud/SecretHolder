@@ -1,0 +1,27 @@
+{
+  "name": "SecretHolder",
+  "version": "1.0.0",
+  "description": "An app for saving and storing secrets.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "xxx": "nodemon server",
+    "zzz": "npm start --prefix frontend",
+    "frontendinstall": "npm install --prefix frontend",
+    "boom": "concurrently \"npm run xxx\" \"npm run zzz\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.24"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
