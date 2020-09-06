@@ -27,9 +27,12 @@ const SecretSchema = new mongoose.Schema({
     note:{
         type: String
     },
+    loggedin_with:{
+        type: String
+    },
     date:{
         type: String,
-        default: Date.now
+        default: Date.now()
     }
 })
 

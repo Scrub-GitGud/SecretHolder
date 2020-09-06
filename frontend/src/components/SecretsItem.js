@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { SecretContext } from '../context/SecretContext'
 import Title from './Title'
+import LoggedInWith from './LoggedInWith';
 
 const SecretsItem = (props) => {
 
@@ -29,6 +30,8 @@ const SecretsItem = (props) => {
             
             <Title title={props.secret_i.title}></Title>
 
+            {props.secret_i.loggedin_with && <LoggedInWith loggedin_with={props.secret_i.loggedin_with} />}
+
             {props.secret_i.username && <div><i className="fas fa-user-tie"/> Username: {props.secret_i.username}</div> }
             {props.secret_i.email && <div><i className="fas fa-envelope"/> Email: {props.secret_i.email}</div> }
             {props.secret_i.phone && <div><i className="fas fa-phone"/> Phone: {props.secret_i.phone}</div> }
@@ -44,7 +47,7 @@ const SecretsItem = (props) => {
                     </CopyToClipboard>
                 </div> 
             }
-
+            
             {props.secret_i.note && <div><i className="fas fa-comment-alt"></i> {props.secret_i.note}</div> }
             {props.secret_i.date && <div><i className="fas fa-clock"></i> Date: {props.secret_i.date}</div> }
 

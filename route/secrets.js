@@ -48,7 +48,8 @@ async (req, res)=>{
             phone: req.body.phone,
             password: req.body.password,
             link: req.body.link,
-            note: req.body.note
+            note: req.body.note,
+            loggedin_with: req.body.loggedin_with
         }
 
         const newSecret = await new SecretModel(secretFields)
@@ -66,8 +67,8 @@ async (req, res)=>{
 
 // @ Edit a secret | PUT api/secrets/:id | with middleware
 ROUT.put('/:id', auth_middleware, async (req, res) => {
-    const {title, username, email, phone, password, link, note} = req.body;
-  
+    const {title, username, email, phone, password, link, note, loggedin_with} = req.body;
+    
     const secretFields = {};
     if (title) secretFields.title = title;
     if (username) secretFields.username = username;
@@ -76,12 +77,13 @@ ROUT.put('/:id', auth_middleware, async (req, res) => {
     if (password) secretFields.password = password;
     if (link) secretFields.link = link;
     if (note) secretFields.note = note;
+    if (loggedin_with) secretFields.loggedin_with = loggedin_with;
 
     try {
       let secret = await SecretModel.findById(req.params.id);
-  
+
       if (!secret) return res.status(404).json({msg: 'Secret not found'});
-  
+
       // Make sure user owns secret
       if (secret.myOwnerID.toString() !== req.user) {
         return res.status(401).json({msg: 'I dont own this secret'});

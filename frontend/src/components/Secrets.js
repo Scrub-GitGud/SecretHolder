@@ -13,6 +13,7 @@ const Secrets = () => {
         // eslint-disable-next-line
     }, [])
 
+    
 
     if(secretContext.secrets === null || !secretContext.secrets.length) {
         return <div>No secret available.</div>

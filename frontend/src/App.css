@@ -20,6 +20,10 @@
   --mega-1: #ff0021;
   --mega-2: #d5011d;
   --pinterest: #E60023;
+  --deviantart: #05cc46;
+  --artstation: #0979f8;
+  --dribbble : #ea4c89;
+  --quora : #b92b27;
 }
 
 * {
@@ -79,6 +83,7 @@ img {
   margin-bottom: 1rem;
 }
 
+.text-inline { display: inline; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .text-left { text-align: left; }
@@ -88,6 +93,11 @@ img {
 .text-facebook { color: var(--facebook); }
 .text-twitter { color: var(--twitter); }
 .text-mega { color: var(--mega-1); }
+.text-deviantart { color: var(--deviantart); }
+.text-artstation { color: var(--artstation); }
+.text-dribbble { color: var(--dribbble); }
+.text-quora { color: var(--quora); }
+.text-pinterest { color: var(--pinterest); }
 .text-instagram {
   background-color: #d6249f;
   background: radial-gradient(circle at 30% 107%, #FD1D1D 0%, #5851DB 5%, #F77737 45%,#C13584 60%,#E1306C 90%);
@@ -219,6 +229,10 @@ img {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 2rem;
+}
+
+.cursos-pointer {
+  cursor: pointer;
 }
 
 .btn {
@@ -364,7 +378,7 @@ textarea {
 }
 textarea {
   resize: none;
-  height: 110px;
+  height: 80px;
   font: inherit;
 }
 
@@ -372,6 +386,17 @@ input[type='submit'],
 button {
   font: inherit;
 }
+input[type='radio'] {
+  margin-left: 15px;
+  margin-bottom: 0px;
+  height: 17px;
+  width: 17px;
+  /* position: absolute; */
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
 
 .form-group {
   margin: 1.2rem 0;
