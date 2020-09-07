@@ -49,7 +49,7 @@ const SecretsItem = (props) => {
             }
             
             {props.secret_i.note && <div><i className="fas fa-comment-alt"></i> {props.secret_i.note}</div> }
-            {props.secret_i.date && <div><i className="fas fa-clock"></i> Date: {props.secret_i.date}</div> }
+            {/* {props.secret_i.date && <div><i className="fas fa-clock"></i> Date: {props.secret_i.date}</div> } */}
 
             <button onClick={onEdit} className="btn btn-dark btn-sm">Edit</button>
             <button onClick={onDelete} className="btn btn-danger btn-sm">Delete</button>

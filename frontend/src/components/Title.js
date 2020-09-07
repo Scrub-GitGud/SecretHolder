@@ -107,7 +107,7 @@ const Title = (props) => {
         default:
             return (
                 <h3 className="text-dark text-left">
-                    <div>{props.title}</div>
+                    <div><i className="fab fa-keycdn text-primary" /> {props.title}</div>
                 </h3>
             )
     }

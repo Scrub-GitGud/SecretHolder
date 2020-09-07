@@ -3,7 +3,7 @@ export const secretReducer = (state, action) => {
         case "ADD_SECRET":
             return {
                 ...state,
-                secrets:[...state.secrets, action.newSecret]
+                secrets:[action.newSecret, ...state.secrets]
             }
         case "ADD_SECRET_FAIL":
             return {

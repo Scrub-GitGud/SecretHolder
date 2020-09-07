@@ -9,10 +9,30 @@ const auth_middleware = require('../Authentication/auth_middleware')
 const SecretModel = require("../Database/SecretModel")
 const UserModel = require("../Database/UserModel")
 
-
 // @ Get Current Users Secret --->  GET api/secrets | with middleware
 ROUT.get("/", auth_middleware, async (req, res)=> {
     try{
+        const foundUser = await UserModel.findById(req.user).select("-password")
+        
+        // Insert Default Items
+        const item1 = new SecretModel({myOwnerID: req.user, title: "instagram", username: "Demo Items", email:"demo@demo.com", phone:"", password:"secret password", link: "https://www.instagram.com/", note: "This is a demo, delete these.", loggedin_with:"with-facebook"})
+        const item2 = new SecretModel({myOwnerID: req.user, title: "Google", username: "", email:"", phone:"01799555154", password:"", link: "https://www.google.com/", note: "This is a demo", loggedin_with:"with-google"})
+        const item3 = new SecretModel({myOwnerID: req.user, title: "twitter", username: "Random", email:"", phone:"", password:"", link: "", note: "", loggedin_with:"with-github"})
+        const item4 = new SecretModel({myOwnerID: req.user, title: "github", username: "", email:"", phone:"", password:"", link: "", note: "This is a demo", loggedin_with:"with-facebook"})
+        const item5 = new SecretModel({myOwnerID: req.user, title: "deviantart", username: "", email:"", phone:"", password:"", link: "", note: "This is a demo", loggedin_with:"with-google"})
+        const item6 = new SecretModel({myOwnerID: req.user, title: "artstation", username: "", email:"", phone:"", password:"", link: "", note: "", loggedin_with:"with-facebook"})
+        const item7 = new SecretModel({myOwnerID: req.user, title: "quora", username: "", email:"", phone:"", password:"", link: "", note: "", loggedin_with:"with-google"})
+        const item8 = new SecretModel({myOwnerID: req.user, title: "dribbble", username: "", email:"", phone:"", password:"", link: "", note: "", loggedin_with:"with-facebook"})
+        const item9 = new SecretModel({myOwnerID: req.user, title: "stackoverflow", username: "", email:"", phone:"", password:"", link: "https://www.stackoverflow.com/", note: "", loggedin_with:""})
+        const item10 = new SecretModel({myOwnerID: req.user, title: "discord", username: "", email:"", phone:"", password:"", link: "https://www.discord.com/", note: "", loggedin_with:"with-facebook"})
+        const item11 = new SecretModel({myOwnerID: req.user, title: "mega", username: "", email:"", phone:"", password:"", link: "", note: "", loggedin_with:"with-facebook"})
+        const defaultItems = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11]
+        if(foundUser.first_time_logging === true) {
+            await SecretModel.insertMany(defaultItems)
+        }
+        foundUser.first_time_logging = false
+        await foundUser.save()
+        
         const foundSecrets = await SecretModel.find({myOwnerID: req.user}).sort({ date: -1 });
         res.json(foundSecrets);
     }

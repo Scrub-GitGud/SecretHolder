@@ -14,6 +14,11 @@ const UserScheman = new mongoose.Schema({
         type: String,
         required: true
     },
+    first_time_logging:{
+        type: Boolean,
+        default: true,
+        required: true
+    },
     date:{
         type: String,
         default: Date.now

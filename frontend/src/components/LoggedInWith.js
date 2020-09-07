@@ -5,8 +5,7 @@ const LoggedInWith = (props) => {
     switch(props.loggedin_with.toLowerCase()) {
         case "with-facebook":
             return (
-                <h4 className="text-inline text-dark">Logged In With: <span className="text-facebook"><i className="fab fa-facebook-square"/> Facebook </span></h4>
-                
+                <div><h4 className="text-inline text-dark">Logged In With: <span className="text-facebook"><i className="fab fa-facebook-square"/> Facebook </span></h4></div>
             )
         case "with-google":
         case "gmail":
@@ -26,7 +25,7 @@ const LoggedInWith = (props) => {
             )
         case "with-github":
             return (
-                <h4 className="text-inline text-dark">Logged In With: <i className="fab fa-github"/> Github</h4>
+                <div> <h4 className="text-inline text-dark">Logged In With: <i className="fab fa-github"/> Github</h4> </div>
             )
     }
 }
