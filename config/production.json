@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://sad:sad@cluster0-sveyr.mongodb.net/PasswordManagerDB",
+    "mongoLocalURI": "mongodb://localhost:27017/PasswordManagerDB",
+    "mySecret": "howdoyouturnthison"
+}
