@@ -1,11 +1,11 @@
 {
-  "name": "SecretHolder",
+  "name": "secretholder",
   "version": "1.0.0",
   "description": "An app for saving and storing secrets.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "xxx": "nodemon server",
+    "xxx": "nodemon server.js",
     "zzz": "npm start --prefix frontend",
     "frontendinstall": "npm install --prefix frontend",
     "boom": "concurrently \"npm run xxx\" \"npm run zzz\"",

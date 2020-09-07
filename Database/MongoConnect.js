@@ -6,7 +6,7 @@ const DB_Local_URI = config.get("mongoLocalURI");
 
 const connectDB = async () => {
     try{
-        await mongoose.connect(DB_Local_URI, {
+        await mongoose.connect(DB_URI, {
             useUnifiedTopology: true,
             useNewUrlParser: true,
             useCreateIndex: true,

@@ -8,7 +8,7 @@ connectDB()
 // Middleware Init
 app.use(express.json({extended: false}));
 
-app.get("/", (req, res)=>res.send("🍆🍆🍆🍆🍆🍆🍆🍆🍆🍆"));
+// app.get("/", (req, res)=>res.send("🍆🍆🍆🍆🍆🍆🍆🍆🍆🍆"));
 
 app.use("/api/reg", require('./Authentication/Register'));
 app.use("/api/login", require('./Authentication/Login'));
