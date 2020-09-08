@@ -9,7 +9,7 @@
     "zzz": "npm start --prefix frontend",
     "frontendinstall": "npm install --prefix frontend",
     "boom": "concurrently \"npm run xxx\" \"npm run zzz\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
